@@ -1,5 +1,5 @@
 FROM alpine:edge
-RUN && apk update \
+RUN apk update \
     && apk add --no-cache --virtual ca-certificates curl unzip caddy \
     && mkdir -p /etc/caddy/ /usr/share/caddy/ && echo -e "User-agent: *\nDisallow: /" >/usr/share/caddy/robots.txt \
     && curl -fssL $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/ \
