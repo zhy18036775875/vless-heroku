@@ -95,7 +95,7 @@ Select the link address you like and copy it as the variable CADDYIndexPage vari
 
 # 重要信息
 
-heroku开始核平使用v2ray/xray/shadowsocks项目的用户，特别是fork项目次数太多而且在YTB上宣传过的，本项目不再更新。能继续使用的请保持低调，免费的资源已所剩无几。（2021.7.19）
+heroku开始核平使用v2ray/xray/shadowsocks项目的用户，特别是fork项目次数太多而且在YTB上宣传过的（fork次数超过100以上的请小心），本项目不再更新。能继续使用的请保持低调，免费的资源已所剩无几。（2021.7.19）
 
 新用户只需要修改id和Caddy主页配置即可
 
@@ -111,7 +111,7 @@ heroku开始核平使用v2ray/xray/shadowsocks项目的用户，特别是fork项
 
 # Important information
 
-Heroku started to clean up users who use the v2ray/xray/shadowsocks project, especially if the fork project is too many and has been advertised on YOUTUBE, this project is no longer updated. If you can continue to use it, please keep a low profile. There are few free resources left.（2021.7.19）
+Heroku has started to clean up users who use the v2ray/xray/shadowsocks project, especially if the number of forks is too many and has been advertised on YTB (please be careful if the number of forks exceeds 100), this project will no longer be updated. If you can continue to use it, please keep a low profile. There are few free resources left. (2021.7.19)
 
 New users only need to modify the id and Caddy homepage configuration
 
