@@ -23,13 +23,6 @@
                 "wsSettings": {
                    "path": "/$ID-vless?ed=2048"
                 }
-            },
-            "sniffing": {
-                "enabled": true,
-                "destOverride": [
-                    "http",
-                    "tls"
-                ]
             }
         }
     ],
