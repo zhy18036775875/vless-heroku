@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #Download and install VLESS
 mkdir -p /tmp/xray
