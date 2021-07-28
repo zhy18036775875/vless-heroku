@@ -93,22 +93,6 @@ Select the link address you like and copy it as the variable CADDYIndexPage vari
 - [CloudflareSpeedTest](https://github.com/XIU2/CloudflareSpeedTest.git)
 - [Better Cloudflare IP](https://github.com/badafans/better-cloudflare-ip.git)
 
-# 重要信息
-
-heroku开始核平使用v2ray/xray/shadowsocks项目的用户，特别是fork项目次数太多而且在YTB上宣传过的（fork次数超过100以上的请小心），本项目不再更新。能继续使用的请保持低调，免费的资源已所剩无几。（2021.7.19）
-
-新用户只需要修改id和Caddy主页配置即可
-
-不熟悉caddy配置的不要修改caddy配置
-
-严禁滥用，因滥用出现的所有问题本人概不负责，且用且珍惜！
-
-本项目不宜做为长期翻墙使用。
-
-出于安全考量，请使用cdn，不要使用自定义域名，以实现VLESS+WS+TLS。
-
-禁止在任何网站宣传本项目！！！！
-
 # Important information
 
 Heroku has started to clean up users who use the v2ray/xray/shadowsocks project, especially if the number of forks is too many and has been advertised on YTB (please be careful if the number of forks exceeds 100), this project will no longer be updated. If you can continue to use it, please keep a low profile. There are few free resources left. (2021.7.19)
