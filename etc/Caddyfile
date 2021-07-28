@@ -1,4 +1,4 @@
-:$PORT
+:${PORT}
 
 root * /usr/share/caddy
 file_server browse
@@ -10,13 +10,13 @@ header {
     Referrer-Policy no-referrer-when-downgrade
 }
 
-basicauth /$ID/* {
-    $ID $MYUUID-HASH
+basicauth /${ID}/* {
+    ${ID} ${MYUUID-HASH}
 }
 
 @websocket {
     header Connection *Upgrade*
     header Upgrade websocket
-    path /$ID-vless
+    path /${ID}-vless
 }
 reverse_proxy @websocket unix//etc/caddy/vless
