@@ -56,7 +56,6 @@ sed -e "/^#/d"\
     -e "$s"\
     /conf/Caddyfile > /etc/caddy/Caddyfile
     echo /etc/caddy/Caddyfile
-    cat /etc/caddy/Caddyfile
 
 # Remove temporary files
 rm -rf /conf
