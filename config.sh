@@ -3,7 +3,6 @@
 # VLESS new configuration
 sed -e "/^#/d"\
     -e "s/\$ID/$ID/g"\
-    -e "s/\$ID-vless/$ID-vless/g"\
     -e "$s"\
     /conf/config.json > /usr/local/etc/xray/config.json
     echo /usr/local/etc/xray/config.json
