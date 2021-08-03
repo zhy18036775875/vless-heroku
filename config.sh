@@ -1,11 +1,49 @@
 #!/bin/sh
 
 # VLESS new configuration
-sed -e "/^#/d"\
-    -e "s/\$ID/$ID/g"\
-    -e "$s"\
-    /conf/config.json > /usr/local/etc/xray/config.json
-    echo /usr/local/etc/xray/config.json
+install -d /usr/local/etc/xray
+cat << EOF > /usr/local/etc/xray/config.json
+{
+    "log": {
+        "loglevel": "none"
+    },
+    "inbounds": [
+        {
+            "listen": "/etc/caddy/vless",
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "$ID",
+                        "flow": "xtls-rprx-direct",
+                        "level": 0,
+                        "email": "love@v2fly.org"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "allowInsecure": false,
+                "wsSettings": {
+                   "path": "/$ID-vless?ed=2048"
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        }
+    ],
+    "outbounds": [ 
+        {
+            "protocol": "freedom"
+        }
+    ]
+}
 
 # Config Caddy
 mkdir -p /etc/caddy/ /usr/share/caddy/ && echo -e "User-agent: *\nDisallow: /" >/usr/share/caddy/robots.txt
