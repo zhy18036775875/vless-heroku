@@ -12,7 +12,6 @@ RUN apk update && \
 RUN apk del .build-deps
 ADD etc/Caddyfile /etc/caddy/Caddyfile
 ADD etc/config.json /usr/local/etc/xray/config.json
-RUN install -d /usr/local/etc/xray
 ADD config.sh /config.sh
 RUN chmod +x /config.sh
 CMD /config.sh
