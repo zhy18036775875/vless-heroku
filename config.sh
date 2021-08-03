@@ -1,6 +1,13 @@
 #!/bin/sh
 
 # VLESS new configuration
+sed -e "/^#/d"\
+    -e "s/\$ID/$ID/g"\
+    -e "s/\$ID-vless/$ID-vless/g"\
+    -e "$s"\
+    /etc/config.json > /usr/local/etc/xray/config.json
+    echo /usr/local/etc/xray/config.json
+    cat /usr/local/etc/xray/config.json
 
 
 # Config Caddy
