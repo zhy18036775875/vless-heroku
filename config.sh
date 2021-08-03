@@ -58,5 +58,8 @@ sed -e "/^#/d"\
     echo /etc/caddy/Caddyfile
     cat /etc/caddy/Caddyfile
 
+# Remove temporary files
+rm -rf /conf
+
 # Run VLESS
 tor & /usr/local/bin/xray -config /usr/local/etc/xray/config.json & caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
