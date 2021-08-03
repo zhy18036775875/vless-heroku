@@ -3,10 +3,6 @@
     "description": "Deploy VLESS on Heroku.",
     "keywords": ["VLESS"],
     "env": {
-        "CONFIGCADDY": {
-            "description": "Caddy configuration file, please do not modify if you are not familiar with caddy configuration",
-            "value": "https://raw.githubusercontent.com/Dimitri2020007/vless-heroku/main/etc/Caddyfile"
-        },
         "CADDYIndexPage": {
             "description": "After the custom CADDY deployment is completed, click on the display page of View，reference readme.md",
             "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
