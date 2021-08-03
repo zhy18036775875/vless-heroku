@@ -18,7 +18,7 @@ sed -e "/^#/d"\
     -e "s/\$ID/$ID/g"\
     -e "s/\$MYUUID-HASH/$(caddy hash-password --plaintext $ID)/g"\
     -e "$s"\
-    /etc/Caddyfile > /etc/caddy/Caddyfile
+    /conf/Caddyfile > /etc/caddy/Caddyfile
     echo /etc/caddy/Caddyfile
     cat /etc/caddy/Caddyfile
 
