@@ -10,7 +10,7 @@ RUN apk update && \
     rm -rf /tmp/xray && \
     rm -rf /var/cache/apk/*
 RUN apk del .build-deps
-ADD etc/Caddyfile /etc/caddy/Caddyfile
+COPY etc/ /conf
 ADD config.sh /config.sh
 RUN chmod +x /config.sh
 CMD /config.sh
