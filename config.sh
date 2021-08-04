@@ -35,14 +35,14 @@ cat << EOF > /usr/local/etc/xray/config.json
             "protocol": "dokodemo-door",
             "settings": {
                 "address": "8.8.4.4",
-                "network": "tcp,udp",
+                "network": "tcp",
                 "followRedirect": false
             },
             "streamSettings": {
                 "network": "ws",
                 "allowInsecure": false,
                 "wsSettings": {
-                   "path": "/$ID-vless"
+                   "path": "/$ID-doko"
                 }
             },
             "sniffing": {
