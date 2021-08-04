@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # VLESS new configuration
-install -d /usr/local/etc/xray/
 cat > /usr/local/etc/xray/config.json << EOF
 {
     "log": {
@@ -50,8 +49,7 @@ EOF
 mkdir -p /etc/caddy/ /usr/share/caddy/
 
 # Generate caddyfile
-install -d /etc/caddy/Caddyfile
-cat > Caddyfile << EOF
+cat > /etc/caddy/Caddyfile << EOF
 :$PORT
 
 root * /usr/share/caddy
@@ -77,7 +75,6 @@ reverse_proxy @websocket_xray_vless unix//etc/caddy/vless
 EOF
 
 # Robot configure
-install -d /usr/share/caddy/
 cat > /usr/share/caddy/robots.txt << EOF
 User-agent: *
 Disallow: /
