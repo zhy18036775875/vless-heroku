@@ -50,8 +50,7 @@ EOF
 mkdir -p /etc/caddy/ /usr/share/caddy/
 
 # Caddy config
-cat << EOF > /etc/caddy/Caddyfile | sed -e "2c :$PORT" -e "s/\$ID/$ID/g" -e "s/\$MYUUID-HASH/$(caddy hash-password --plaintext $ID)/g" >/etc/caddy/Caddyfile
-{
+cat >> Caddyfile <<EOF > /etc/caddy/Caddyfile
 :$PORT
 
 root * /usr/share/caddy
@@ -74,7 +73,6 @@ basicauth /$ID/* {
     path /$ID-vless
 }
 reverse_proxy @websocket_xray_vless unix//etc/caddy/vless
-}
 EOF
 
 # Robot.txt config
@@ -86,6 +84,7 @@ EOF
 
 # Other configuration
 wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
+sed -e "1c :$PORT" -e "s/\$ID/$ID/g" -e "s/\$MYUUID-HASH/$(caddy hash-password --plaintext $ID)/g" >/etc/caddy/Caddyfile
 
 # Run VLESS
 tor & /usr/local/bin/xray -config /usr/local/etc/xray/config.json & caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
