@@ -20,10 +20,3 @@ basicauth /$ID/* {
     path /$ID-vless
 }
 reverse_proxy @websocket_xray_vless 127.0.0.1:7200
-
-@websocket_xray_doko {
-    header Connection *Upgrade*
-    header Upgrade    websocket
-    path /$ID-doko
-}
-reverse_proxy @websocket_xray_doko 127.0.0.1:7201
