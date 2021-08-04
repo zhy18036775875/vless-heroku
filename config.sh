@@ -30,21 +30,6 @@ cat << EOF > /usr/local/etc/xray/config.json
                    "path": "/$ID-vless?ed=2048"
                 }
             },
-            "listen": "127.0.0.1",
-            "port": 7201,
-            "protocol": "dokodemo-door",
-            "settings": {
-                "address": "8.8.4.4",
-                "network": "tcp,udp",
-                "followRedirect": false
-            },
-            "streamSettings": {
-                "network": "ws",
-                "allowInsecure": false,
-                "wsSettings": {
-                   "path": "/$ID-doko"
-                }
-            },
             "sniffing": {
                 "enabled": true,
                 "destOverride": [
