@@ -42,7 +42,7 @@ cat << EOF > /usr/local/etc/xray/config.json
                 "network": "ws",
                 "allowInsecure": false,
                 "wsSettings": {
-                   "path": "/$ID-vless?ed=2048"
+                   "path": "/$ID-vless"
                 }
             },
             "sniffing": {
