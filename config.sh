@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # VLESS new configuration
+install -d /usr/local/etc/xray/
 cat > /usr/local/etc/xray/config.json << EOF
 {
     "log": {
@@ -47,32 +48,6 @@ EOF
 
 # Config Caddy
 mkdir -p /etc/caddy/ /usr/share/caddy/
-
-# Generate caddyfile
-cat > /etc/caddy/Caddyfile << EOF
-:$PORT
-
-root * /usr/share/caddy
-file_server browse
-
-header {
-    X-Robots-Tag none
-    X-Content-Type-Options nosniff
-    X-Frame-Options DENY
-    Referrer-Policy no-referrer-when-downgrade
-}
-
-basicauth /$ID/* {
-    $ID $MYUUID-HASH
-}
-
-@websocket_xray_vless {
-    header Connection *Upgrade*
-    header Upgrade    websocket
-    path /$ID-vless
-}
-reverse_proxy @websocket_xray_vless unix//etc/caddy/vless
-EOF
 
 # Robot configure
 cat > /usr/share/caddy/robots.txt << EOF
