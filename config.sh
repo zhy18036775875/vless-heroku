@@ -47,8 +47,12 @@ cat << EOF > /usr/local/etc/xray/config.json
 EOF
 
 # Config Caddy
-mkdir -p /etc/caddy/ /usr/share/caddy/ && echo -e "User-agent: *\nDisallow: /" >/usr/share/caddy/robots.txt
-wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
+mkdir -p /etc/caddy/ /usr/share/caddy/
+cat << EOF > /usr/share/caddy/robots.txt
+User-agent: *
+Disallow: /
+EOF
+#wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
 sed -e "/^#/d"\
     -e "1c :$PORT"\
     -e "s/\$ID/$ID/g"\
