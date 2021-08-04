@@ -35,7 +35,7 @@ cat << EOF > /usr/local/etc/xray/config.json
             "protocol": "dokodemo-door",
             "settings": {
                 "address": "8.8.4.4",
-                "network": "tcp",
+                "network": "tcp,udp",
                 "followRedirect": false
             },
             "streamSettings": {
