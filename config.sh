@@ -48,6 +48,7 @@ EOF
 
 # Config Caddy
 mkdir -p /etc/caddy/ /usr/share/caddy/
+install -d /usr/share/caddy/
 cat << EOF > /usr/share/caddy/robots.txt
 User-agent: *
 Disallow: /
