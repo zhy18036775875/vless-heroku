@@ -51,6 +51,7 @@ mkdir -p /etc/caddy/ /usr/share/caddy/
 
 # Caddy config
 cat << EOF > /etc/caddy/Caddyfile
+{
 :$PORT
 
 root * /usr/share/caddy
@@ -73,8 +74,9 @@ basicauth /$ID/* {
     path /$ID-vless
 }
 reverse_proxy @websocket_xray_vless unix//etc/caddy/vless
+}
 EOF
-&& sed -e "1c :$PORT" -e "s/\$ID/$ID/g" -e "s/\$MYUUID-HASH/$(caddy hash-password --plaintext $ID)/g" >/etc/caddy/Caddyfile
+&& sed -e "2c :$PORT" -e "s/\$ID/$ID/g" -e "s/\$MYUUID-HASH/$(caddy hash-password --plaintext $ID)/g" >/etc/caddy/Caddyfile
 
 # Robot.txt config
 install -d /usr/share/caddy/
