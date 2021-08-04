@@ -9,7 +9,8 @@ cat << EOF > /usr/local/etc/xray/config.json
     },
     "inbounds": [
         {
-            "listen": "/etc/caddy/vless",
+            "listen": "127.0.0.1",
+            "port": 7200,
             "protocol": "vless",
             "settings": {
                 "clients": [
@@ -21,6 +22,21 @@ cat << EOF > /usr/local/etc/xray/config.json
                     }
                 ],
                 "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "allowInsecure": false,
+                "wsSettings": {
+                   "path": "/$ID-vless?ed=2048"
+                }
+            },
+            "listen": "127.0.0.1",
+            "port": 7201,
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "v1.mux.cool",
+                "network": "tcp,udp",
+                "followRedirect": false
             },
             "streamSettings": {
                 "network": "ws",
