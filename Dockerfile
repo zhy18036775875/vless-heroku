@@ -1,7 +1,7 @@
 FROM alpine:edge
 
 RUN apk update && \
-    apk add --no-cache --virtual .build-deps ca-certificates curl unzip caddy tor && \
+    apk add --no-cache --virtual .build-deps ca-certificates certutil curl unzip caddy tor && \
     mkdir -p /tmp/xray && \
     curl -L -H "Cache-Control: no-cache" -o /tmp/xray/xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
     unzip /tmp/xray/xray.zip -d /tmp/xray && \
