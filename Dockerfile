@@ -11,6 +11,7 @@ RUN apk update && \
     rm -rf /tmp/v2ray && \
     rm -rf /var/cache/apk/*
 RUN apk del .build-deps
+COPY etc/ /conf
 ADD config.sh /config.sh
 RUN chmod +x /config.sh
 CMD /config.sh
