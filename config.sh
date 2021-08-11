@@ -9,7 +9,7 @@ cat > /usr/local/etc/v2ray/config.json << EOF
     },
     "inbounds": [
         {
-            "listen": "/etc/caddy/vless",
+            "listen": "/etc/caddy/vless.sock",
             "protocol": "vless",
             "settings": {
                 "clients": [
