@@ -7,7 +7,7 @@ RUN apk update && \
     unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray && \
     install -m 755 /tmp/v2ray/v2ray /usr/local/bin/v2ray && \
     v2ray -version && \
-    install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ray && \
+    install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl && \
     rm -rf /tmp/v2ray && \
     rm -rf /var/cache/apk/*
 RUN apk del .build-deps
