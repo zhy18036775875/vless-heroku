@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # VLESS new configuration
-install -d /usr/local/etc/xray/
-cat > /usr/local/etc/xray/config.json << EOF
+install -d /usr/local/etc/v2ray/
+cat > /usr/local/etc/v2ray/config.json << EOF
 {
     "log": {
         "loglevel": "none"
@@ -71,4 +71,4 @@ sed -e "/^#/d" -e "1c :$PORT" -e "s/\$ID/$ID/g" -e "s/\$MYUUID-HASH/$(caddy hash
 echo /etc/caddy/Caddyfile
 
 # Run VLESS
-tor & /usr/local/bin/xray -config /usr/local/etc/xray/config.json & caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+tor & /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json & caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
