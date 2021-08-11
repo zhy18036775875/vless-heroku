@@ -64,7 +64,7 @@ EOF
 
 # V2ctl cert configure
 mkdir -p /usr/local/etc/v2cert
-/usr/local/bin/v2ctl cert -ca -domain="localhost" -expire=17532h -file=v2ray
+/usr/local/bin/v2ctl cert -ca -domain="127.0.0.1" -expire=17532h -file=v2ray
 
 # Other configure
 wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
