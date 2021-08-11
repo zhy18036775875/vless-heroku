@@ -23,17 +23,9 @@ cat > /usr/local/etc/v2ray/config.json << EOF
             },
             "streamSettings": {
                 "network": "ws",
-                "security": "tls",
+                "allowInsecure": false
                 "wsSettings": {
                    "path": "/$ID-vless"
-                },
-                "tlsSettings": {
-                   "certificates": [
-                      {
-                         "certificateFile": "/usr/local/etc/v2cert/v2ray_cert.pem",
-                         "keyFile": "/usr/local/etc/v2cert/v2ray_key.pem"
-                      }
-                   ]
                 }
             },
             "sniffing": {
@@ -61,10 +53,6 @@ cat > /usr/share/caddy/robots.txt << EOF
 User-agent: *
 Disallow: /
 EOF
-
-# V2ctl cert configure
-mkdir -p /usr/local/etc/v2cert
-/usr/local/bin/v2ctl cert -ca -expire=17532h -file=v2ray
 
 # Other configure
 wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
