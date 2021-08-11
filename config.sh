@@ -15,7 +15,6 @@ cat > /usr/local/etc/xray/config.json << EOF
                 "clients": [
                     {
                         "id": "$ID",
-                        "flow": "xtls-rprx-direct",
                         "level": 0,
                         "email": "love@v2fly.org"
                     }
@@ -26,7 +25,7 @@ cat > /usr/local/etc/xray/config.json << EOF
                 "network": "ws",
                 "allowInsecure": false,
                 "wsSettings": {
-                   "path": "/$ID-vless?ed=2048"
+                   "path": "/$ID-vless"
                 }
             },
             "sniffing": {
