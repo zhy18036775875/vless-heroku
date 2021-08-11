@@ -1,13 +1,14 @@
-FROM alpine:edge
+FROM alpine:3.14
 
 RUN apk update && \
     apk add --no-cache --virtual .build-deps ca-certificates nss-tools curl unzip caddy tor && \
-    mkdir /tmp/xray && \
-    curl -L -H "Cache-Control: no-cache" -o /tmp/xray/xray.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
-    unzip /tmp/xray/xray.zip -d /tmp/xray && \
-    install -m 755 /tmp/xray/xray /usr/local/bin/xray && \
-    xray -version && \
-    rm -rf /tmp/xray && \
+    mkdir /tmp/v2ray && \
+    curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip && \
+    unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray && \
+    install -m 755 /tmp/v2ray/v2ray /usr/local/bin/v2ray && \
+    install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl && \
+    v2ray -version && \
+    rm -rf /tmp/v2ray && \
     rm -rf /var/cache/apk/*
 RUN apk del .build-deps
 COPY etc/ /conf
