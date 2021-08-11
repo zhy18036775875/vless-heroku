@@ -30,9 +30,8 @@ cat > /usr/local/etc/v2ray/config.json << EOF
                 "tlsSettings": {
                    "certificates": [
                        "certificateFile": "/usr/local/etc/v2cert/v2ray_cert.pem",
-                       "keyFile": "/usr/local/etc/v2cert/v2ray_key.pem",
-                   ],
-                   "allowInsecure": false
+                       "keyFile": "/usr/local/etc/v2cert/v2ray_key.pem"
+                   ]
                 }
             },
             "sniffing": {
