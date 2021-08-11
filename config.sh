@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # VLESS new configuration
-install -d /usr/local/etc/v2ray/
+install -d /usr/local/etc/v2ray
 cat > /usr/local/etc/v2ray/config.json << EOF
 {
     "log": {
