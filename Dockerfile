@@ -1,6 +1,6 @@
 FROM archlinux:latest
 
-RUN pacman -Syu && \
+RUN pacman -Syu --noconfirm && \
     pacman -S --noconfirm ca-certificates curl unzip caddy tor && \
     mkdir /tmp/v2ray && \
     curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip && \
