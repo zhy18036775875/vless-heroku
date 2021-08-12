@@ -9,7 +9,6 @@ RUN pacman -Syu --noconfirm && \
     install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl && \
     v2ray -version && \
     rm -rf /tmp/v2ray
-RUN pacman -Scc
 COPY etc/ /conf
 ADD config.sh /config.sh
 RUN chmod +x /config.sh
