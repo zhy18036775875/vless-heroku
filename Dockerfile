@@ -1,5 +1,5 @@
 FROM archlinux:latest
-
+ENV HOME=/root
 RUN pacman -Syu --noconfirm && \
     pacman -S --noconfirm ca-certificates curl unzip caddy tor && \
     mkdir /tmp/v2ray && \
