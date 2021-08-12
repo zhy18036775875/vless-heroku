@@ -1,5 +1,6 @@
 FROM archlinux:latest
-ENV HOME=/root
+ENV $HOME=/root
+
 RUN pacman -Syu --noconfirm && \
     pacman -S --noconfirm ca-certificates curl unzip caddy tor && \
     mkdir /tmp/v2ray && \
@@ -9,7 +10,6 @@ RUN pacman -Syu --noconfirm && \
     install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl && \
     v2ray -version && \
     rm -rf /tmp/v2ray
-RUN echo $HOME
 COPY etc/ /conf
 ADD config.sh /config.sh
 RUN chmod +x /config.sh
