@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:latest
 
 RUN apk update && \
     apk add --no-cache --virtual .build-deps ca-certificates nss-tools curl unzip tor tar && \
