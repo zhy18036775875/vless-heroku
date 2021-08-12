@@ -1,10 +1,3 @@
-FROM caddy:latest-builder AS builder
-RUN xcaddy build && \
-    --with github.com/caddy-dns/cloudflare && \
-    --with github.com/mholt/caddy-l4
-FROM caddy:latest
-COPY --from=builder /usr/local/bin /usr/local/bin
-
 FROM alpine:3.12
 
 RUN apk update && \
@@ -15,8 +8,13 @@ RUN apk update && \
     install -m 755 /tmp/v2ray/v2ray /usr/local/bin/v2ray && \
     install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl && \
     v2ray -version && \
+    rm -rf /var/cache/apk/* && \
+    wget -O caddy.tar.gz -P /tmp/caddy/ https://github.com/caddyserver/caddy/releases/download/v2.4.3/caddy_2.4.3_linux_amd64.tar.gz && \
+    tar -zxvf /tmp/caddy/caddy.tar.gz -C /tmp/caddy && \
+    install -m 755 /tmp/caddy/caddy /usr/local/bin/caddy && \
+    caddy version && \
     rm -rf /tmp/v2ray && \
-    rm -rf /var/cache/apk/*
+    rm -rf /tmp/caddy
 
 RUN apk del .build-deps
 COPY etc/ /conf
