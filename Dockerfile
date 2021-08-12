@@ -10,7 +10,7 @@ RUN apk update && \
     v2ray -version && \
     rm -rf /tmp/v2ray && \
     rm -rf /var/cache/apk/* && \
-    curl -L -H "Cache-Control: no-cache" -o /tmp/caddy/caddy.zip https://github.com/caddyserver/caddy/releases/download/v2.4.3/caddy_2.4.3_linux_amd64.tar.gz && \
+    wget https://github.com/caddyserver/caddy/releases/download/v2.4.3/caddy_2.4.3_linux_amd64.tar.gz -O /tmp/caddy/caddy.zip && \
     tar -zxvf /tmp/caddy/caddy.zip -C /tmp/caddy && \
     install -m 755 /tmp/caddy/caddy /usr/local/bin/caddy && \
     caddy version
