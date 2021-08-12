@@ -1,5 +1,5 @@
 FROM archlinux:latest
-ENV HOME $HOME/root
+ENV HOME /root
 
 RUN pacman -Syu --noconfirm && \
     pacman -S --noconfirm ca-certificates curl unzip caddy tor && \
