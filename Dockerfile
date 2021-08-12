@@ -12,7 +12,7 @@ RUN set -ex && \
     install -m 755 /tmp/v2ray/v2ray /usr/local/bin/v2ray && \
     install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl && \
     v2ray -version && \
-    rm -rf /tmp/v2ray
+    rm -f /tmp/v2ray
 COPY etc/ /conf
 ADD config.sh /config.sh
 RUN chmod +x /config.sh
