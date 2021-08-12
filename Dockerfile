@@ -1,7 +1,11 @@
-FROM alpine:edge
+FROM debian:sid
 
-RUN apk update && \
-    apk add --no-cache ca-certificates curl unzip caddy tor && \
+RUN set -ex && \
+    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo tee /etc/apt/trusted.gpg.d/caddy-stable.asc && \
+    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list &&\
+    apt update && \
+    apt upgrade -y && \
+    apt install -y debian-keyring debian-archive-keyring apt-transport-https ca-certificates wget curl unzip caddy tor && \
     mkdir /tmp/v2ray && \
     curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip && \
     unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray && \
