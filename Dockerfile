@@ -9,7 +9,7 @@ RUN apk update && \
     install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl && \
     v2ray -version && \
     rm -rf /var/cache/apk/* && \
-    wget -O caddy.tar.gz -P /tmp/caddy/ https://github.com/caddyserver/caddy/releases/download/v2.4.3/caddy_2.4.3_linux_amd64.tar.gz && \
+    curl -fssL "https://github.com/caddyserver/caddy/releases/download/v2.4.3/caddy_2.4.3_linux_arm64.tar.gz" -o "/tmp/caddy/" && \
     tar -zxvf /tmp/caddy/caddy.tar.gz -C /tmp/caddy && \
     install -m 755 /tmp/caddy/caddy /usr/local/bin/caddy && \
     caddy version && \
