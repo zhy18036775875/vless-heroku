@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN apk update && \
-    apk add --no-cache --virtual .build-deps ca-certificates nss-tools curl unzip tor tar && \
+    apk add --no-cache --virtual .build-deps ca-certificates nss-tools curl unzip tar && \
     mkdir /tmp/v2ray && \
     mkdir /tmp/caddy && \
     curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip && \
