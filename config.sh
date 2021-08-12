@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Global variables
-DIR_CONFIG="/etc/v2ray"
-DIR_RUNTIME="/usr/local"
-DIR_TMP="$(mktemp -d)"
-
 # VLESS new configuration
 install -d /usr/local/etc/v2ray/
 cat > /usr/local/etc/v2ray/config.json << EOF
