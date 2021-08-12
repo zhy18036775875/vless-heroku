@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # VLESS new configuration
 install -d /usr/local/etc/v2ray/
