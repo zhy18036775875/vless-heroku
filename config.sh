@@ -60,4 +60,4 @@ sed -e "/^#/d" -e "1c :$PORT" -e "s/\$ID/$ID/g" -e "s/\$MYUUID-HASH/$(caddy hash
 echo /etc/caddy/Caddyfile
 
 # Run VLESS
-tor & /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json & /usr/local/bin/caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+/usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json & /usr/local/bin/caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
