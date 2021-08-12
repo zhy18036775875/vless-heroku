@@ -12,8 +12,7 @@ RUN apk update && \
     rm -rf /var/cache/apk/* && \
     curl -L -H "Cache-Control: no-cache" -o /tmp/caddy/caddy.tar.gz https://github.com/caddyserver/caddy/releases/download/v2.4.3/caddy_2.4.3_linux_amd64.tar.gz && \
     tar -zxvf /tmp/caddy/caddy.tar.gz -C /tmp/caddy && \
-    install -m 755 /tmp/caddy/caddy /usr/local/bin/caddy && \
-    caddy version
+    install -m 755 /tmp/caddy/caddy /usr/local/bin/caddy
 
 RUN apk del .build-deps
 COPY etc/ /conf
