@@ -59,12 +59,11 @@ else
   echo "site: ${ProxySite}"
 fi
 
-# Configure nginx
 sed -e "/^#/d"\
-    -e "s/\$PORT/$PORT/g"\
-    -e "s/\$ID/$ID/g"
+    -e "s/\${PORT}/${PORT}/g"\
+    -e "s/\${ID}/${ID}/g"\
     -e "$s"\
-    /conf/nginx.conf > /etc/nginx/conf.d/ray.conf
+    /conf/nginx.template.conf > /etc/nginx/conf.d/ray.conf
 echo /etc/nginx/conf.d/ray.conf
 cat /etc/nginx/conf.d/ray.conf
 
