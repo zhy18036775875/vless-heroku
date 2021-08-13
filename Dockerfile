@@ -14,6 +14,7 @@ RUN apk update && \
     tar -zxvf /tmp/caddy/caddy.tar.gz -C /tmp/caddy && \
     install -m 755 /tmp/caddy/caddy /usr/local/bin/caddy && \
     caddy version && \
+    caddy environ && \
     rm -rf /tmp/v2ray && \
     rm -rf /tmp/caddy
 
