@@ -4,12 +4,13 @@
     },
     "inbounds": [
         {
-            "listen": "/etc/caddy/vless",
+            "listen": "0.0.0.0",
+            "port": "8280"
             "protocol": "vless",
             "settings": {
                 "clients": [
                     {
-                        "id": "$ID",
+                        "id": "${ID}",
                         "level": 0,
                         "email": "love@v2fly.org"
                     }
@@ -20,7 +21,7 @@
                 "network": "ws",
                 "security": "none",
                 "wsSettings": {
-                   "path": "/$ID-vless"
+                   "path": "/${ID}-vless"
                 }
             },
             "sniffing": {
