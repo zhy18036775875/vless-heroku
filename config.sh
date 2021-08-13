@@ -11,7 +11,7 @@ chmod +x ./v2ctl
 ls -al
 
 # Decompress webroot
-cd /usr/share/nginx/wwwroot/
+cd /wwwroot
 tar -zxvf wwwroot.tar.gz
 rm -rf wwwroot.tar.gz
 
