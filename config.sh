@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # VLESS new configuration
 mkdir -p  /usr/local/bin
@@ -35,7 +35,6 @@ cat /usr/local/bin/config.json
 sed -e "/^#/d"\
     -e "s/\${PORT}/${PORT}/g"\
     -e "s/\${ID}/${ID}/g"\
-    -e "$s"\
     /conf/nginx.template.conf > /etc/nginx/conf.d/ray.conf
 echo /etc/nginx/conf.d/ray.conf
 cat /etc/nginx/conf.d/ray.conf
