@@ -1,49 +1,7 @@
 #!/bin/sh
 
 # VLESS new configuration
-install -d /usr/local/etc/v2ray/
-cat > /usr/local/etc/v2ray/config.json << EOF
-{
-    "log": {
-        "loglevel": "none"
-    },
-    "inbounds": [
-        {
-            "listen": "/etc/caddy/vless",
-            "protocol": "vless",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "$ID",
-                        "level": 0,
-                        "email": "love@v2fly.org"
-                    }
-                ],
-                "decryption": "none"
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "none",
-                "wsSettings": {
-                   "path": "/$ID-vless"
-                }
-            },
-            "sniffing": {
-                "enabled": true,
-                "destOverride": [
-                    "http",
-                    "tls"
-                ]
-            }
-        }
-    ],
-    "outbounds": [ 
-        {
-            "protocol": "freedom"
-        }
-    ]
-}
-EOF
+
 
 # Decompress webroot
 cd /usr/share/nginx/wwwroot/
