@@ -3,7 +3,8 @@
 # VLESS new configuration
 mkdir -p  /usr/local/bin
 cd /usr/local/bin
-wget -qO- "https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip" | unzip v2ray-linux-64.zip
+curl -fssL "https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip"
+unzip v2ray-linux-64.zip
 rm -rf v2ray-linux-64.zip
 chmod +x ./v2ray
 chmod +x ./v2ctl
