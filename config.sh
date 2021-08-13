@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # VLESS new configuration
 mkdir -p  /usr/local/bin
@@ -26,15 +26,15 @@ fi
 
 # Config vless
 sed -e "/^#/d"\
-    -e "s/\$ID/$ID/g"\
+    -e "s/\${ID}/${ID}/g"\
     /conf/config.json >  /usr/local/bin/config.json
 echo /usr/local/bin/config.json
 cat /usr/local/bin/config.json
 
 # Configure nginx
 sed -e "/^#/d"\
-    -e "s/\$PORT}/$PORT/g"\
-    -e "s/\$ID/$ID/g"\
+    -e "s/\${PORT}/${PORT}/g"\
+    -e "s/\${ID}/${ID}/g"\
     -e "$s"\
     /conf/nginx.conf > /etc/nginx/conf.d/ray.conf
 echo /etc/nginx/conf.d/ray.conf
