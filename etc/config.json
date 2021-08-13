@@ -4,8 +4,7 @@
     },
     "inbounds": [
         {
-            "listen": "0.0.0.0",
-            "port": "8280",
+            "listen": "/etc/nginx/vless",
             "protocol": "vless",
             "settings": {
                 "clients": [
