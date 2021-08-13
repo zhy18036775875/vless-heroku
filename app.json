@@ -3,9 +3,9 @@
     "description": "Deploy VLESS on Heroku.",
     "keywords": ["VLESS"],
     "env": {
-        "CADDYIndexPage": {
-            "description": "After the custom CADDY deployment is completed, click on the display page of View，reference readme.md",
-            "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
+        "ProxySite": {
+            "description": "Reverse a website, such as mirror.umd.edu. If you don’t fill in, it means to use a local static web page file.",
+            "value": "mirror.umd.edu"
         },
         "ID": {
             "description": "VLESS ID, access to https://www.uuidgenerator.net",
