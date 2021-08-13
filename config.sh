@@ -14,7 +14,7 @@ cat > /usr/local/etc/v2ray/config.json << EOF
             "settings": {
                 "clients": [
                     {
-                        "id": "${ID}",
+                        "id": "$ID",
                         "flow": "xtls-rprx-direct",
                         "level": 0,
                         "email": "love@v2fly.org"
@@ -26,7 +26,7 @@ cat > /usr/local/etc/v2ray/config.json << EOF
                 "network": "ws",
                 "security": "none",
                 "wsSettings": {
-                   "path": "/${ID}-vless"
+                   "path": "/$ID-vless"
                 }
             },
             "sniffing": {
