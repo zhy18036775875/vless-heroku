@@ -1,8 +1,12 @@
-FROM alpine:edge
+FROM debian:sid
 
-RUN apk update && \
-    apk add --no-cache --virtual .build-deps ca-certificates nss-tools nginx curl unzip tar tor && \
-    mkdir /tmp/v2ray && \
+RUN set -ex\
+    && apt update -y \
+    && apt upgrade -y \
+    && apt install -y wget unzip qrencode\
+    && apt install -y shadowsocks-libev\
+    && apt install -y nginx\
+    && apt autoremove -y
     curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip && \
     unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray && \
     install -m 755 /tmp/v2ray/v2ray /usr/local/bin/v2ray && \
@@ -11,7 +15,6 @@ RUN apk update && \
     rm -rf /var/cache/apk/* && \
     rm -rf /tmp/v2ray
 
-RUN apk del .build-deps
 COPY etc/ /conf
 COPY wwwroot.tar.gz /usr/share/nginx/wwwroot/wwwroot.tar.gz
 ADD config.sh /config.sh
