@@ -45,20 +45,28 @@ cat > /usr/local/etc/v2ray/config.json << EOF
 }
 EOF
 
-# Config Caddy
-mkdir -p /etc/caddy/ /usr/share/caddy/
+# Decompress webroot
+cd /usr/share/nginx/wwwroot/
+tar -zxvf wwwroot.tar.gz
+rm -rf wwwroot.tar.gz
 
-# Robot configure
-cat > /usr/share/caddy/robots.txt << EOF
-User-agent: *
-Disallow: /
-EOF
+# Configure proxysite
+if [[ -z "${ProxySite}" ]]; then
+  s="s/proxy_pass/#proxy_pass/g"
+  echo "site:use local wwwroot html"
+else
+  s="s|\${ProxySite}|${ProxySite}|g"
+  echo "site: ${ProxySite}"
+fi
 
-# Other configure
-wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
-sed -e "/^#/d" -e "1c :$PORT" -e "s/\$ID/$ID/g" -e "s/\$MYUUID-HASH/$(caddy hash-password --algorithm bcrypt --plaintext $ID)/g" -e "$s" /conf/Caddyfile > /etc/caddy/Caddyfile
-echo /etc/caddy/Caddyfile
-cp -r /conf/envfile /usr/local/bin/envfile
+# Configure nginx
+sed -e "/^#/d"\
+    -e "s/\${PORT}/${PORT}/g"\
+    -e "s/\$ID/$ID/g"
+    -e "$s"\
+    /conf/nginx.conf > /etc/nginx/conf.d/ray.conf
+echo /etc/nginx/conf.d/ray.conf
+cat /etc/nginx/conf.d/ray.conf
 
 # Run VLESS
-tor & /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json & /usr/local/bin/caddy run --config /etc/caddy/Caddyfile --adapter caddyfile ---envfile /usr/local/bin/envfile
+tor & /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json & rm -rf /etc/nginx/sites-enabled/default & nginx -g 'daemon off;'
