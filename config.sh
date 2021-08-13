@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # VLESS new configuration
-mkdir -p  /usr/local/bin/v2ray
-cd /usr/local/bin/v2ray
+mkdir -p  /usr/local/bin
+cd /usr/local/bin
 wget -qO- "https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip" | unzip v2ray-linux-64.zip
 rm -rf v2ray-linux-64.zip
 chmod +x ./v2ray
@@ -26,9 +26,9 @@ fi
 # Config vless
 sed -e "/^#/d"\
     -e "s/\${ID}/${ID}/g"\
-    /conf/config.json >  /usr/local/etc/v2ray/config.json
-echo /usr/local/etc/v2ray/config.json
-cat /usr/local/etc/v2ray/config.json
+    /conf/config.json >  /usr/local/bin/config.json
+echo /usr/local/bin/config.json
+cat /usr/local/bin/config.json
 
 # Configure nginx
 sed -e "/^#/d"\
@@ -40,4 +40,7 @@ echo /etc/nginx/conf.d/ray.conf
 cat /etc/nginx/conf.d/ray.conf
 
 # Run VLESS
-tor & ./usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json & rm -rf ./etc/nginx/sites-enabled/default & nginx -g 'daemon off;'
+cd /usr/local/bin/
+tor & ./v2ray -c ./config.json
+rm -rf /etc/nginx/sites-enabled/default
+nginx -g 'daemon off;'
