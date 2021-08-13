@@ -23,6 +23,13 @@ else
   echo "site: ${ProxySite}"
 fi
 
+# Config vless
+sed -e "/^#/d"\
+    -e "s/\${ID}/${ID}/g"\
+    /conf/config.json >  /usr/local/etc/v2ray/config.json
+echo /usr/local/etc/v2ray/config.json
+cat /usr/local/etc/v2ray/config.json
+
 # Configure nginx
 sed -e "/^#/d"\
     -e "s/\${PORT}/${PORT}/g"\
