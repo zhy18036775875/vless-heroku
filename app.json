@@ -8,7 +8,7 @@
             "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
         },
         "ID": {
-            "description": "VLESS ID, access to https://www.uuidgenerator.net",
+            "description": "VLESS ID, access to https://www.uuidgenerator.net, using ver 1 UUID",
             "value": "63dfa1d3-228d-4c69-990c-ab0f6e889f63"
         }
     },
