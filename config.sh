@@ -46,5 +46,19 @@ cat > /usr/local/etc/v2ray/config.json << EOF
 }
 EOF
 
+# Config Caddy
+mkdir -p /etc/caddy/ /usr/share/caddy/
+
+# Robot configure
+cat > /usr/share/caddy/robots.txt << EOF
+User-agent: *
+Disallow: /
+EOF
+
+# Other configure
+wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
+sed -e "/^#/d" -e "1c :$PORT" -e "s/\$ID/$ID/g" -e "s/\$MYUUID-HASH/$(caddy hash-password --algorithm scrypt --plaintext $ID)/g" -e "$s" /conf/Caddyfile > /etc/caddy/Caddyfile
+echo /etc/caddy/Caddyfile
+
 # Run vless
-/usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json
+tor & /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json & /usr/local/bin/caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
