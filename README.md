@@ -13,7 +13,7 @@ Deploy vless on heroku
 | `Port` | 443 |
 | `Host` | yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy Domain Name |
 | `Path` | /$ID-vless?ed=2048 |
-| `id` | Generate using UUID generator or V2RayN/V2RayNG client generate </br> [uuidgenerator](https://www.uuidgenerator.net/) |
+| `id` | Generate using UUID generator or V2RayN/V2RayNG client generate </br> [uuidgenerator](https://www.uuidgenerator.net/) using version1 UUID |
 | `Flow` | none |
 | `encryption` | none |
 | `Transport` | ws |
