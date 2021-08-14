@@ -3,12 +3,8 @@
     "description": "Deploy VLESS on Heroku.",
     "keywords": ["VLESS"],
     "env": {
-        "CADDYIndexPage": {
-            "description": "After the custom CADDY deployment is completed, click on the display page of View，reference readme.md",
-            "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
-        },
         "ID": {
-            "description": "VLESS ID, please visit https://www.uuidgenerator.net, using ver 1 UUID",
+            "description": "VLESS ID, please visit https://www.uuidgenerator.net",
             "value": "63dfa1d3-228d-4c69-990c-ab0f6e889f63"
         }
     },
