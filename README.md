@@ -1,7 +1,7 @@
 # vless-heroku
 Deploy vless on heroku
 
-Friendly reminder: After fork this project, change the project deployment address to your own name.
+Friendly reminder: After fork this project, change heroku deploy address to your own name.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/Dimitri2020007/vless-heroku.git)
 
