@@ -1,6 +1,8 @@
 # vless-heroku
 Deploy vless on heroku
 
+Friendly reminder: After fork this project, change the project deployment address to your own name.
+
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/Dimitri2020007/vless-heroku.git)
 
 # VLESS Client Setup
@@ -96,6 +98,8 @@ Select the link address you like and copy it as the variable CADDYIndexPage vari
 # Important information
 
 Heroku has started to clean up users who use the v2ray/xray/shadowsocks project, especially if the number of forks is too many and has been advertised on YOUTUBE (please be careful if the number of forks exceeds 100), this project will no longer be updated. If you can continue to use it, please keep a low profile. There are few free resources left. (2021.7.19)
+
+An abnormal error occurred in the caddy web server, and the caddy web server has been cancelled
 
 New users only need to modify the id and Caddy homepage configuration
 
