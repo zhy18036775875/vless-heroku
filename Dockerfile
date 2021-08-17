@@ -13,7 +13,6 @@ RUN  apk update && \
      rm -rf /var/cache/apk/* && \
      apk del .build-deps
 
-COPY etc/ /conf
 ADD config.sh /config.sh
 RUN chmod +x /config.sh
 CMD /config.sh
