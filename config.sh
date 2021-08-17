@@ -47,4 +47,4 @@ cat > /usr/local/etc/v2ray/config.json << EOF
 EOF
 
 # Run vless
-tor & /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json
+tor & /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json & caddy environ
