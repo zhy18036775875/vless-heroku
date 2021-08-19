@@ -17,7 +17,7 @@ Friendly reminder: After fork this project, change heroku deploy address to your
 | `AllowInsecure` | false |
 | `Port` | 443 |
 | `Host` | yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy Domain Name |
-| `Path` | /$ID-vless?ed=2048 |
+| `Path` | /$ID-vless |
 | `id` | Generate using UUID generator or V2RayN/V2RayNG client generate </br> [uuidgenerator](https://www.uuidgenerator.net/) |
 | `Flow` | none |
 | `encryption` | none |
