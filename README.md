@@ -1,4 +1,7 @@
 # vless-heroku
+## If you can continue to use it, please keep a low profile. 
+## Do not promote any website
+
 Deploy vless on heroku
 
 Friendly reminder: After fork this project, change heroku deploy address to your own name.
