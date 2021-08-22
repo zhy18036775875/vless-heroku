@@ -1,6 +1,9 @@
 # vless-heroku
 ## If you can continue to use it, please keep a low profile. 
 ## Do not promote any website
+## 如果能继续使用的，请保持低调！！！
+## 不要在任何网站宣传本项目！！！
+## 新用户fork本项目之后，请将部署链接后面的名字改成自己的名字！！！
 
 Deploy vless on heroku
 
