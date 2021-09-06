@@ -2,15 +2,19 @@
 
 # VLESS new configuration
 install -d /usr/local/etc/v2ray
-cat > /usr/local/etc/v2ray/config.json << EOF
+cat << EOF > /usr/local/etc/v2ray/config.json
 {
     "log": {
         "loglevel": "none"
     },
     "inbounds": [
-        {
-            "port": $PORT,
+        {   
+            "listen": "/etc/caddy/vless",
             "protocol": "vless",
+            "sniffing": {
+                "enabled": true,
+                "destOverride": ["http","tls"]
+            },
             "settings": {
                 "clients": [
                     {
@@ -23,20 +27,38 @@ cat > /usr/local/etc/v2ray/config.json << EOF
             },
             "streamSettings": {
                 "network": "ws",
-                "security": "none",
+                "allowInsecure": false,
                 "wsSettings": {
-                   "path": "/$ID-vless"
+                  "path": "/$ID-vless"
                 }
             }
         }
     ],
-    "outbounds": [ 
+    "outbounds": [
         {
             "protocol": "freedom"
         }
-    ]
+    ],
+    "dns": {
+        "servers": [
+            "https://dns.google/dns-query",
+            "https://cloudflare-dns.com/dns-query"
+        ]
+    }
 }
 EOF
 
-# Run vless
-/usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json
+# Config Caddy
+mkdir -p /etc/caddy/ /usr/share/caddy/
+cat > /usr/share/caddy/robots.txt << EOF
+User-agent: *
+Disallow: /
+EOF
+wget $CADDYIndexPage -O /usr/share/caddy/index.html && unzip -qo /usr/share/caddy/index.html -d /usr/share/caddy/ && mv /usr/share/caddy/*/* /usr/share/caddy/
+sed -e "1c :$PORT" -e "s/\$ID/$ID/g" -e "s/\$EMAIL/$EMAIL/g" -e "s/\$API_KEY/$API_KEY/g" -e "s/\$MYUUID-HASH/$(caddy hash-password --plaintext $ID)/g" /conf/Caddyfile >/etc/caddy/Caddyfile
+
+# Remove temporary directory
+rm -rf /conf
+
+# Run VLESS
+tor & /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json & /usr/bin/caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
