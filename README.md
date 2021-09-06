@@ -5,9 +5,9 @@
 ## 不要在任何网站宣传本项目！！！
 ## ![捕获1](https://user-images.githubusercontent.com/72486732/132205566-238ff619-6e57-4379-aa74-089d3a582d44.PNG) Fork本项目后将readme.md中的Dimitri2020007替换为自己的用户名后再进行部署，非常重要，切记！！！！
 
-Deploy vless on heroku
+## Deploy vless on heroku
 
-Friendly reminder: After fork this project, change heroku deploy address to your own name.
+## Fork this project, replace Dimitri2020007 in readme.md with your own user name before deploying, it is very important, remember!!!!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/Dimitri2020007/vless-heroku.git)
 
