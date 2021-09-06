@@ -3,9 +3,21 @@
     "description": "Deploy VLESS on Heroku.",
     "keywords": ["VLESS"],
     "env": {
+        "EMAIL": {
+            "description": "Cloudflare email",
+            "value": "email"
+        },
+        "API_KEY": {
+            "description": "Cloudflare dns global api key",
+            "value": "api token"
+        },
+        "CADDYIndexPage": {
+            "description": "After the custom CADDY deployment is completed, click on the display page of View，reference readme.md",
+            "value": "https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html"
+        },
         "ID": {
-            "description": "VLESS ID, please visit https://www.uuidgenerator.net",
-            "value": "63dfa1d3-228d-4c69-990c-ab0f6e889f63"
+            "description": "VLESS ID, use uuid generator",
+            "value": "1a3904ca-85cd-46f4-9836-dd9e9fc03e68"
         }
     },
     "repository": "",
