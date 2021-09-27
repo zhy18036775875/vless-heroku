@@ -43,6 +43,6 @@ ENV XDG_CONFIG_HOME /etc/caddy
 ENV XDG_DATA_HOME /usr/share/caddy
 
 COPY etc/Caddyfile /conf/Caddyfile
-ADD configure.sh /configure.sh
-RUN chmod +x /configure.sh
-CMD /configure.sh
+ADD config.sh /config.sh
+RUN chmod +x /config.sh
+CMD /config.sh
