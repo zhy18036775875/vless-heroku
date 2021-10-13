@@ -74,6 +74,19 @@ addEventListener(
     }
 )
 ```
+# Global api key application tutorial
+
+login cloudflare
+
+First:
+
+![捕获](https://user-images.githubusercontent.com/72486732/137079505-8cbe8b36-8e5b-410c-bc6c-441125dc2d29.jpg)
+
+Second:
+
+![捕获1](https://user-images.githubusercontent.com/72486732/137079601-f787fb80-b2b6-464f-87ef-bf4b77da496c.jpg)
+
+## Please be sure to protect the api key!!!
 
 # Caddyindexpage (Welcome to Pull Requests)
 Select the link address you like and copy it as the variable CADDYIndexPage variable value
