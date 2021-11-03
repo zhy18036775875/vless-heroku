@@ -5,7 +5,7 @@ RUN xcaddy build \
         --with github.com/ueffel/caddy-brotli \
         --with github.com/casbin/caddy-authz \
         --with github.com/greenpau/caddy-auth-portal \
-        --with github.com/greenpau/caddy-auth-jwt \
+        --with github.com/ggicci/caddy-jwt \
         --with github.com/ss098/certmagic-s3 \
         --with github.com/silinternational/certmagic-storage-dynamodb \
         --with github.com/pteich/caddy-tlsconsul \
