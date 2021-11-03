@@ -28,7 +28,7 @@ COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
 RUN set -ex && \
     apk update && \
-    apk add --no-cache --virtual .build-deps ca-certificates curl unzip wget nss-tools tor acme.sh && \
+    apk add --no-cache --virtual .build-deps ca-certificates curl unzip wget nss-tools tor && \
     mkdir /tmp/v2ray && \
     curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip && \
     unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray && \
