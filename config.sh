@@ -82,8 +82,5 @@ wget https://raw.githubusercontent.com/Loyalsoldier/geoip/release/cn.dat -O /usr
 # Remove temporary directory
 rm -rf /conf
 
-# Test acme
-acme.sh --issue --server letsencrypt --test -d *.herokuapp.com -w /usr/share/caddy --keylength ec-256 --debug
-
 # Run VLESS
 tor & /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json & /usr/bin/caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
