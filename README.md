@@ -6,7 +6,6 @@
 ## 禁止在任何网站宣传本项目！！！！
 ## 带有删除线的部分表示不适用或已经废弃
 ## 自2021.11.18起不再部署caddy，改为单一vless部署以减少项目大小，提高项目稳定性。
-## 点击deploy创建app，完成后进入manage，点击“Open App”显示http 404就说明部署成功了！
 
 ## Deploy vless on heroku
 
@@ -14,7 +13,6 @@
 ## The part with a strikethrough indicates that it is not applicable or has been obsoleted
 ## It is forbidden to promote this project on any website!!!!
 ## Since 2021.11.18, caddy will no longer be deployed, but a single vless deployment will be used to reduce project size and improve project stability.
-## Click deploy to create the app, and then enter manage after completion, and click "Open App" to display http 404, which means the deployment is successful!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/Dimitri2020007/vless-heroku.git)
 
@@ -40,7 +38,7 @@
 | `2dust V2RayN` </br> `2dust V2RayNG` | Ws+Tls+Flow |
 | `OpenWrt SSRPlus` | Ws+Tls |
 | `OpenWrt Passwall` | Ws+Tls |
-| `QV2Ray` | Ws+Tls |
+| ~~`QV2Ray`~~ | ~~Ws+Tls~~ |
 
 # Cloudflare Reverse Proxy Code (Choose one from both examples)
 
