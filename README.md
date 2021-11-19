@@ -2,12 +2,17 @@
 ## If you can continue to use it, please keep a low profile. 
 ## Do not promote any website
 ## 如果能继续使用的，请保持低调！！！
-## 不要在任何网站宣传本项目！！！
 ## ![捕获1](https://user-images.githubusercontent.com/72486732/132205566-238ff619-6e57-4379-aa74-089d3a582d44.PNG) Fork本项目后将readme.md中的Dimitri2020007替换为自己的用户名后再进行部署，非常重要，切记！！！！
+## 禁止在任何网站宣传本项目！！！！
+## 带有删除线的部分表示不适用或已经废弃
+## 自2021.11.18起不再部署caddy，改为单一vless部署以减少项目大小，提高项目稳定性。
 
 ## Deploy vless on heroku
 
 ## Fork this project, replace Dimitri2020007 in readme.md with your own user name before deploying, it is very important, remember!!!!
+## The part with a strikethrough indicates that it is not applicable or has been obsoleted
+## It is forbidden to promote this project on any website!!!!
+## Since 2021.11.18, caddy will no longer be deployed, but a single vless deployment will be used to reduce project size and improve project stability.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/Dimitri2020007/vless-heroku.git)
 
@@ -74,36 +79,6 @@ addEventListener(
     }
 )
 ```
-# Global api key application tutorial
-
-login cloudflare
-
-First:
-
-![捕获](https://user-images.githubusercontent.com/72486732/137079505-8cbe8b36-8e5b-410c-bc6c-441125dc2d29.jpg)
-
-Second:
-
-![捕获1](https://user-images.githubusercontent.com/72486732/137079601-f787fb80-b2b6-464f-87ef-bf4b77da496c.jpg)
-
-## Please be sure to protect the api key!!!
-
-# Caddyindexpage (Welcome to Pull Requests)
-Select the link address you like and copy it as the variable CADDYIndexPage variable value
-| Number | Address |
-| ------ | ------- |
-| 1(default) | [Welcome to caddy page](https://raw.githubusercontent.com/caddyserver/dist/master/welcome/index.html) |
-| 2 | [3DCEList Periodic Table of Elements](https://github.com/wulabing/3DCEList/archive/master.zip) |
-| 3 | [Spotify-Landing-Page-Redesign](https://github.com/WebDevSimplified/Spotify-Landing-Page-Redesign/archive/master.zip) |
-| 4 | [dev-landing-page](https://github.com/flexdinesh/dev-landing-page/archive/master.zip) |
-| 5 | [free-for-dev](https://github.com/ripienaar/free-for-dev/archive/master.zip) |
-| 6 | [tailwindtoolbox-Landing-Page](https://github.com/tailwindtoolbox/Landing-Page/archive/master.zip) |
-| 7 | [sandhikagalih/simple-landing-page](https://github.com/sandhikagalih/simple-landing-page/archive/master.zip) |
-| 8 | [StartBootstrap/startbootstrap-new-age](https://github.com/StartBootstrap/startbootstrap-new-age/archive/master.zip) |
-| 9 | [mikutap A fun page with music](https://github.com/AYJCSGM/mikutap/archive/master.zip) [demo](https://aidn.jp/mikutap) |
-| 10 | [WebGL Fluid simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation/archive/master.zip) [demo](https://paveldogreat.github.io/WebGL-Fluid-Simulation/) |
-| 11 | [loruki-website](https://github.com/bradtraversy/loruki-website/archive/master.zip) |
-| 12 | [bongo.cat A musical cat](https://github.com/Externalizable/bongo.cat/archive/master.zip) [demo](https://bongo.cat/) |
 
 # Acknowledgments
 
@@ -116,9 +91,7 @@ Select the link address you like and copy it as the variable CADDYIndexPage vari
 
 # Important information
 
-New users only need to modify the id and Caddy homepage configuration
-
-Do not modify the caddy configuration if you are not familiar with the caddy configuration
+New users only need to modify the id
 
 Abuse is strictly prohibited, I am not responsible for all problems arising from abuse, and use and cherish!
 
