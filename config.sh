@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Set iptables
-iptables -A INPUT -p tcp --tcp-flags RST ACK -j DROP
-iptables -A OUTPUT -p tcp --tcp-flags RST ACK -j DROP
-iptables -t nat -A PREROUTING -p tcp --tcp-flags RST ACK -j DROP
-
 # Install VLESS binary and decompress binary
 mkdir /tmp/v2ray
 curl --retry 10 --retry-max-time 60 -L -H "Cache-Control: no-cache" -fsSL github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip -o /tmp/v2ray/v2ray.zip
