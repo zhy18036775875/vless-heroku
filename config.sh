@@ -1,16 +1,15 @@
 #!/bin/sh
 
-# Install V2/X2 binary and decompress binary
+# Get V2/X2 binary and decompress binary
 mkdir /tmp/v2ray
 curl --retry 10 --retry-max-time 60 -L -H "Cache-Control: no-cache" -fsSL github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip -o /tmp/v2ray/v2ray.zip
 busybox unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray
 install -m 755 /tmp/v2ray/v2ray /usr/local/bin/v2ray
 install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl
+install -m 755 /tmp/v2ray/geosite.dat /usr/local/bin/geosite.dat
+install -m 755 /tmp/v2ray/geoip.dat /usr/local/bin/geoip.dat
 v2ray -version
 rm -rf /tmp/v2ray
-
-# Install geoip
-curl --retry 10 --retry-max-time 60 -L -H "Cache-Control: no-cache" -fsSL raw.githubusercontent.com/Loyalsoldier/geoip/release/cn.dat -o /usr/local/bin/cn.dat
 
 # V2/X2 new configuration
 install -d /usr/local/etc/v2ray
@@ -21,7 +20,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
     },
     "inbounds": [
         {   
-            "listen": "/etc/caddy/vless",
+            "port": ${PORT},
             "protocol": "vless",
             "sniffing": {
                 "enabled": true,
@@ -44,6 +43,30 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                   "path": "/$ID-vless"
                 }
             }
+        },
+        {   
+            "port": ${PORT},
+            "protocol": "trojan",
+            "sniffing": {
+                "enabled": true,
+                "destOverride": ["http","tls"]
+            },
+            "settings": {
+                "clients": [
+                    {
+                        "password":"$ID",
+                        "email": "love@v2fly.org"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "allowInsecure": false,
+                "wsSettings": {
+                  "path": "/$ID-trojan"
+                }
+            }
         }
     ],
     "routing": {
@@ -55,11 +78,11 @@ cat << EOF > /usr/local/etc/v2ray/config.json
               "protocol": [
                  "bittorrent"
               ],
-              "ip": [
-                  "ext:cn.dat:cn"
+              "domains": [
+                  "geosite:cn",
+                  "geosite:category-ads-all"
               ],
-              "inboundTag": "cn",
-              "outboundTag": "cn"
+              "outboundTag": "blocked"
            }
         ]
     },
@@ -68,7 +91,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
             "protocol": "freedom"
         },
         {
-            "tag": "cn",
+            "tag": "blocked",
             "protocol": "blackhole"
         }
     ],
