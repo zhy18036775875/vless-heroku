@@ -1,4 +1,6 @@
-# vless-heroku
+# VLESS-heroku
+## Deploy VLESS and Trojan server on heroku
+
 ## If you can continue to use it, please keep a low profile. 
 ## Do not promote any website
 ## 如果能继续使用的，请保持低调！！！
@@ -6,8 +8,6 @@
 ## 禁止在任何网站宣传本项目！！！！
 ## 带有删除线的部分表示不适用或已经废弃
 ## 自2021.11.18起不再部署caddy，改为单一部署以减少项目大小，提高项目稳定性，不保证本项目有被封的可能。
-
-## Deploy vless on heroku
 
 ## Fork this project, replace Dimitri2020007 in readme.md with your own user name before deploying, it is very important, remember!!!!
 ## The part with a strikethrough indicates that it is not applicable or has been obsoleted
