@@ -8,7 +8,6 @@
 ## 选择不向任何网站转传是为了更长久的相聚，愿你能发现墙外美好而又有趣的地方。
 ## 带有删除线的部分表示不适用或已经废弃
 ## 自2021.11.18起不再部署caddy，改为单一部署以减少项目大小，提高项目稳定性，不保证本项目有被封的可能。
-## 墙终将倒下，信念将会成真。（取自里根总统演讲）
 
 ## Fork this project, replace Dimitri2020007 in readme.md with your own user name before deploying, it is very important, remember!!!!
 ## The part with a strikethrough indicates that it is not applicable or has been obsoleted
