@@ -5,14 +5,16 @@
 ## Do not promote any website
 ## 如果能继续使用的，请保持低调！！！
 ## ![捕获1](https://user-images.githubusercontent.com/72486732/132205566-238ff619-6e57-4379-aa74-089d3a582d44.PNG) Fork本项目后将readme.md中的Dimitri2020007替换为自己的用户名后再进行部署，非常重要，切记！！！！
-## 禁止在任何网站宣传本项目！！！！
+## 选择不向任何网站转传是为了更长久的相聚，愿你能发现墙外美好而又有趣的地方。
 ## 带有删除线的部分表示不适用或已经废弃
 ## 自2021.11.18起不再部署caddy，改为单一部署以减少项目大小，提高项目稳定性，不保证本项目有被封的可能。
+## 墙终将倒下，信念将会成真。（取自里根总统演讲）
 
 ## Fork this project, replace Dimitri2020007 in readme.md with your own user name before deploying, it is very important, remember!!!!
 ## The part with a strikethrough indicates that it is not applicable or has been obsoleted
-## It is forbidden to promote this project on any website!!!!
+## The reason for choosing not to repost to any website is to get together for a longer time. I hope you can find beautiful and interesting places outside the wall.
 ## Since 2021.11.18, caddy will no longer be deployed, but a single deployment will be used to reduce the size of the project and improve the stability of the project. There is no guarantee that this project may be blocked.
+## This wall will fall. Beliefs become reality. (Ronald Reagan)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/Dimitri2020007/vless-heroku.git)
 
