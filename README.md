@@ -58,7 +58,7 @@
 | ------ | ------ |
 | `2dust V2RayN` </br> `2dust V2RayNG` | No, Please use VLESS ws+tls |
 | `OpenWrt SSRPlus` | Yes |
-| `OpenWrt Passwall` | Yes |
+| `OpenWrt Passwall` | No, Please use VLESS ws+tls |
 
 # Cloudflare Reverse Proxy Code (Choose one from both examples)
 
