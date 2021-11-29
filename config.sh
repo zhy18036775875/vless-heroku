@@ -89,10 +89,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
     },
     "outbounds": [
         {
-            "protocol": "freedom",
-            "settings": {
-                "domainStrategy": "UseIPv4"
-            }
+            "protocol": "freedom"
         },
         {
             "tag": "blocked",
