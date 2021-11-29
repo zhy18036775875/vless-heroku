@@ -24,7 +24,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
             "protocol": "vless",
             "sniffing": {
                 "enabled": true,
-                "destOverride": ["http","tls"]
+                "destOverride": ["tls"]
             },
             "settings": {
                 "clients": [
@@ -49,12 +49,13 @@ cat << EOF > /usr/local/etc/v2ray/config.json
             "protocol": "trojan",
             "sniffing": {
                 "enabled": true,
-                "destOverride": ["http","tls"]
+                "destOverride": ["tls"]
             },
             "settings": {
                 "clients": [
                     {
                         "password":"$ID",
+                        "level": 0,
                         "email": "love@v2fly.org"
                     }
                 ],
@@ -88,7 +89,10 @@ cat << EOF > /usr/local/etc/v2ray/config.json
     },
     "outbounds": [
         {
-            "protocol": "freedom"
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "UseIPv4"
+            }
         },
         {
             "tag": "blocked",
