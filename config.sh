@@ -101,7 +101,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                     "geosite:!cn"
                 ],
                 "expectIPs": [
-                    "geoip:!cn"
+                    "geoip:cn"
                 ]
             },
             {
@@ -112,7 +112,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                     "geosite:!cn",
                 ],
                 "expectIPs": [
-                    "geoip:!cn"
+                    "geoip:cn"
                 ]
             }
         ],
