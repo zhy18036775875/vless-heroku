@@ -22,10 +22,6 @@ cat << EOF > /usr/local/etc/v2ray/config.json
         {   
             "port": ${PORT},
             "protocol": "vless",
-            "sniffing": {
-                "enabled": true,
-                "destOverride": ["tls"]
-            },
             "settings": {
                 "clients": [
                     {
@@ -47,10 +43,6 @@ cat << EOF > /usr/local/etc/v2ray/config.json
         {   
             "port": ${PORT},
             "protocol": "trojan",
-            "sniffing": {
-                "enabled": true,
-                "destOverride": ["tls"]
-            },
             "settings": {
                 "clients": [
                     {
@@ -83,24 +75,51 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                   "geosite:cn",
                   "geosite:category-ads-all"
               ],
-              "outboundTag": "blocked"
+              "tag": "blocked"
            }
         ]
     },
     "outbounds": [
         {
-            "protocol": "freedom"
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "UseIPv4"
+            }
         },
         {
-            "tag": "blocked",
-            "protocol": "blackhole"
+            "protocol": "blackhole",
+            "tag": "blocked"
         }
     ],
     "dns": {
         "servers": [
-            "https://dns.google/dns-query",
-            "https://cloudflare-dns.com/dns-query"
-        ]
+            {
+                "address": "fakedns",
+                "domains": [
+                    "geosite:cn",
+                    "geosite:category-ads-all"
+                ]
+            },
+            {
+                "address": "8.8.4.4",
+                "port": 53,
+                "skipFallback": true,
+                "expectIPs": [
+                    "geosite:cn",
+                    "geosite:category-ads-all"
+                ]
+            },
+            {
+                "address": "1.1.1.1",
+                "port": 53,
+                "skipFallback": true,
+                "expectIPs": [
+                    "geosite:cn",
+                    "geosite:category-ads-all"
+                ]
+            }
+        ],
+        "queryStrategy": "UseIPv4"
     }
 }
 EOF
