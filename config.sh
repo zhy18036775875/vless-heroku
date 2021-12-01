@@ -75,7 +75,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                   "geosite:cn",
                   "geosite:category-ads-all"
               ],
-              "tag": "blocked"
+              "outboundTag": "blocked"
            }
         ]
     },
