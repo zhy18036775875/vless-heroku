@@ -83,7 +83,8 @@ cat << EOF > /usr/local/etc/v2ray/config.json
         {
             "protocol": "freedom",
             "settings": {
-                "domainStrategy": "UseIPv4"
+                "domainStrategy": "UseIPv4",
+                "userLevel": 0
             }
         },
         {
