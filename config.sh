@@ -98,8 +98,10 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 "port": 53,
                 "skipFallback": true,
                 "domains": [
-                    "geosite:cn",
-                    "geosite:category-ads-all"
+                    "geosite:!cn"
+                ],
+                "expectIPs": [
+                    "geoip:!cn"
                 ]
             },
             {
@@ -107,8 +109,10 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 "port": 53,
                 "skipFallback": true,
                 "domains": [
-                    "geosite:cn",
-                    "geosite:category-ads-all"
+                    "geosite:!cn",
+                ],
+                "expectIPs": [
+                    "geoip:!cn"
                 ]
             }
         ],
