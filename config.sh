@@ -108,6 +108,9 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 "address": "1.1.1.1",
                 "port": 53,
                 "skipFallback": true,
+                "domains": [
+                    "geosite:geolocation-!cn"
+                ],
                 "expectIPs": [
                     "geoip:cn"
                 ]
