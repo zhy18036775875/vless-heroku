@@ -94,13 +94,6 @@ cat << EOF > /usr/local/etc/v2ray/config.json
     "dns": {
         "servers": [
             {
-                "address": "fakedns",
-                "domains": [
-                    "geosite:cn",
-                    "geosite:category-ads-all"
-                ]
-            },
-            {
                 "address": "8.8.4.4",
                 "port": 53,
                 "skipFallback": true,
