@@ -91,30 +91,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
             "protocol": "blackhole",
             "tag": "blocked"
         }
-    ],
-    "dns": {
-        "servers": [
-            {
-                "address": "https://dns.google/dns-query",
-                "domains": [
-                    "geosite:geolocation-!cn"
-                ],
-                "expectIPs": [
-                    "geoip:cn"
-                ]
-            },
-            {
-                "address": "https://cloudflare-dns.com/dns-query",
-                "domains": [
-                    "geosite:geolocation-!cn"
-                ],
-                "expectIPs": [
-                    "geoip:cn"
-                ]
-            }
-        ],
-        "queryStrategy": "UseIPv4"
-    }
+    ]
 }
 EOF
 
