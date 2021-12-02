@@ -95,7 +95,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
     "dns": {
         "servers": [
             {
-                "network": "udp",
+                "network": "tcp",
                 "address": "8.8.4.4",
                 "port": 53,
                 "skipFallback": true,
@@ -107,7 +107,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 ]
             },
             {
-                "network": "udp",
+                "network": "tcp",
                 "address": "1.1.1.1",
                 "port": 53,
                 "skipFallback": true,
