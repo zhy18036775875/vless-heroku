@@ -79,14 +79,41 @@ cat << EOF > /usr/local/etc/v2ray/config.json
         {
             "protocol": "freedom",
             "settings": {
-                "userLevel": 0
+                "domainStrategy": "UseIPv4"
             }
         },
         {
             "protocol": "blackhole",
             "tag": "blocked"
         }
-    ]
+    ],
+    "dns": {
+        "servers": [
+            {
+                "address": "8.8.4.4",
+                "port": 53,
+                "skipFallback": true,
+                "domains": [
+                    "geosite:geolocation-!cn"
+                ],
+                "expectIPs": [
+                    "geoip:cn"
+                ]
+            },
+            {
+                "address": "1.1.1.1",
+                "port": 53,
+                "skipFallback": true,
+                "domains": [
+                    "geosite:geolocation-!cn"
+                ],
+                "expectIPs": [
+                    "geoip:cn"
+                ]
+            }
+        ],
+        "queryStrategy": "UseIPv4"
+    }
 }
 EOF
 
