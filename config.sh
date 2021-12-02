@@ -81,7 +81,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
     },
     "outbounds": [
         {
-            "protocol": "freedom",
+            "protocol": "freedom"
         },
         {
             "protocol": "blackhole",
