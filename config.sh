@@ -95,8 +95,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
     "dns": {
         "servers": [
             {
-                "address": "8.8.4.4",
-                "port": 53,
+                "address": "https://dns.google/dns-query",
                 "skipFallback": true,
                 "domains": [
                     "geosite:geolocation-!cn"
@@ -106,8 +105,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 ]
             },
             {
-                "address": "1.1.1.1",
-                "port": 53,
+                "address": "https://cloudflare-dns.com/dns-query",
                 "skipFallback": true,
                 "domains": [
                     "geosite:geolocation-!cn"
