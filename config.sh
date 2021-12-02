@@ -91,7 +91,36 @@ cat << EOF > /usr/local/etc/v2ray/config.json
             "protocol": "blackhole",
             "tag": "blocked"
         }
-    ]
+    ],
+    "dns": {
+        "servers": [
+            {
+                "network": "udp",
+                "address": "8.8.4.4",
+                "port": 53,
+                "skipFallback": true,
+                "domains": [
+                    "geosite:geolocation-!cn"
+                ],
+                "expectIPs": [
+                    "geoip:cn"
+                ]
+            },
+            {
+                "network": "udp",
+                "address": "1.1.1.1",
+                "port": 53,
+                "skipFallback": true,
+                "domains": [
+                    "geosite:geolocation-!cn"
+                ],
+                "expectIPs": [
+                    "geoip:cn"
+                ]
+            }
+        ],
+        "queryStrategy": "UseIPv4"
+    }
 }
 EOF
 
