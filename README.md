@@ -35,41 +35,41 @@
 |**`Address`**|yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy IP|
 |**`SNI`**|none|
 |**`AllowInsecure`**|false|
-|`Port`|443|
-| `Host` |yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy Domain Name|
-| `Path` |/$ID-vless|
-| `id` |Generate using UUID generator or V2RayN/V2RayNG client generate</br>[uuidgenerator](https://www.uuidgenerator.net/)|
-| `Flow` |none|
-| `encryption` |none|
-| `Transport` |ws|
-| `Tls` |Tls must open, otherwise your network was insecure!|
+|**`Port`**|443|
+|**`Host`**|yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy Domain Name|
+|**`Path`**|/$ID-vless|
+|**`id`**|Generate using UUID generator or V2RayN/V2RayNG client generate</br>[uuidgenerator](https://www.uuidgenerator.net/)|
+|**`Flow`**|none|
+|**`encryption`**|none|
+|**`Transport`**|ws|
+|**`Tls`**|Tls must open, otherwise your network was insecure!|
 
 # Trojan Client Setup
-| Connection Variables | Values |
-| -------------------- | ------ |
-| `Address` | yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy IP |
-| `SNI` | Cloudflare Reverse Proxy Domain Name |
-| `Port` | 443 |
-| `Host` | yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy Domain Name |
-| `Path` | /$ID-trojan |
-| `password` | Generate using UUID generator or V2RayN/V2RayNG client generate </br> [uuidgenerator](https://www.uuidgenerator.net/) |
-| `Transport` | ws |
-| `Tls` | Tls must open, otherwise your network was insecure! |
+|Connection Variables|Values|
+|:------------------:|:----:|
+|**`Address`**|yourAppName.herokuapp.com</br>Cloudflare Reverse Proxy IP|
+|**`SNI`**|Cloudflare Reverse Proxy Domain Name|
+|**`Port`**|443|
+|**`Host`**|yourAppName.herokuapp.com</br>Cloudflare Reverse Proxy Domain Name|
+|**`Path`**|/$ID-trojan|
+|**`password`**|Generate using UUID generator or V2RayN/V2RayNG client generate</br>[uuidgenerator](https://www.uuidgenerator.net/)|
+|**`Transport`**|ws|
+|**`Tls`**|Tls must open, otherwise your network was insecure!|
 
 # Client Ws+Tls+Xtls-rprx-direct(Flow) Support Status
-| Client | Status |
-| ------ | ------ |
-| `2dust V2RayN` </br> `2dust V2RayNG` | Ws+Tls+Flow |
-| `OpenWrt SSRPlus` | Ws+Tls |
-| `OpenWrt Passwall` | Ws+Tls |
-| ~~`QV2Ray`~~ | ~~Ws+Tls~~ |
+|**Client**|**Status**|
+|:--------:|:--------:|
+|**`2dust V2RayN`**</br>**`2dust V2RayNG`**|Ws+Tls+Flow|
+|**`OpenWrt SSRPlus`**|Ws+Tls|
+|**`OpenWrt Passwall`**|Ws+Tls|
+|**~~`QV2Ray`~~**|~~Ws+Tls~~|
 
 # Trojan Ws+Tls Support Status
-| Client | Support Trojan ws+tls? |
-| ------ | ------ |
-| `2dust V2RayN` </br> `2dust V2RayNG` | No, Please use VLESS ws+tls |
-| `OpenWrt SSRPlus` | Yes |
-| `OpenWrt Passwall` | No, Please use VLESS ws+tls |
+|Client|Support Trojan ws+tls?|
+|:----:|:--------------------:|
+|**`2dust V2RayN`**</br>**`2dust V2RayNG`**|No, Please use VLESS ws+tls|
+|**`OpenWrt SSRPlus`**|Yes|
+|**`OpenWrt Passwall`**|No, Please use VLESS ws+tls|
 
 # Cloudflare Reverse Proxy Code (Choose one from both examples)
 
@@ -87,7 +87,7 @@ addEventListener(
 )
 ```
 
-example 2 (recommend)
+example 2
 ```
 const SingleDay = 'appname.herokuapp.com'
 const DoubleDay = 'appname.herokuapp.com'
@@ -103,6 +103,42 @@ addEventListener(
         
         let url=new URL(event.request.url);
         url.hostname="appname.herokuapp.com";
+        let request=new Request(url,event.request);
+        event. respondWith(
+            fetch(request)
+        )
+    }
+)
+```
+
+example 3
+```
+const Day0 = 'app0.herokuapp.com'
+const Day1 = 'app1.herokuapp.com'
+const Day2 = 'app2.herokuapp.com'
+const Day3 = 'app3.herokuapp.com'
+const Day4 = 'app4.herokuapp.com'
+addEventListener(
+    "fetch",event => {
+    
+        let nd = new Date();
+        let day = nd.getDate() % 5;
+        if (day === 0) {
+            host = Day0
+        } else if (day === 1) {
+            host = Day1
+        } else if (day === 2) {
+            host = Day2
+        } else if (day === 3){
+            host = Day3
+        } else if (day === 4){
+            host = Day4
+        } else {
+            host = Day0
+        }
+        
+        let url=new URL(event.request.url);
+        url.hostname=host;
         let request=new Request(url,event.request);
         event. respondWith(
             fetch(request)
