@@ -6,7 +6,7 @@
 # 部署提示
 
 |**注意事项**|
-|:---------:|
+|:---------|
 |**如果能继续使用的，请保持低调！！！**|
 |**![捕获1](https://user-images.githubusercontent.com/72486732/132205566-238ff619-6e57-4379-aa74-089d3a582d44.PNG) Fork本项目后将readme.md中的Dimitri2020007替换为自己的用户名后再进行部署，非常重要，切记！！！！**|
 |**若出现We couldn't deploy your app because the source code violates the Salesforce Acceptable Use and External-Facing Services Policy.提示，则返回仓库，>Setting>Repository name修改仓库名。**|
@@ -17,7 +17,7 @@
 # English version
 
 |**Pay Attenation**|
-|:----------------:|
+|:----------------|
 |**If you can continue to use it, please keep a low profile.**|
 |**Fork this project, replace Dimitri2020007 in readme.md with your own user name before deploying, it is very important, remember!!!!**|
 |**If the prompt We couldn't deploy your app because the source code violates the Salesforce Acceptable Use and External-Facing Services Policy. appears, return to the warehouse, >Setting>Repository name to modify the warehouse name.**|
