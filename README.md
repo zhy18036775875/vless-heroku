@@ -30,19 +30,19 @@
 
 # VLESS Client Setup
 
-| Connection Variables | Values |
-| -------------------- | ------ |
-| `Address` | yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy IP |
-| `SNI` | none |
-| `AllowInsecure` | false |
-| `Port` | 443 |
-| `Host` | yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy Domain Name |
-| `Path` | /$ID-vless |
-| `id` | Generate using UUID generator or V2RayN/V2RayNG client generate </br> [uuidgenerator](https://www.uuidgenerator.net/) |
-| `Flow` | none |
-| `encryption` | none |
-| `Transport` | ws |
-| `Tls` | Tls must open, otherwise your network was insecure! |
+|Connection Variables|Values|
+|:------------------:|:----:|
+|**`Address`**|yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy IP|
+|**`SNI`**|none|
+|**`AllowInsecure`**|false|
+|`Port`|443|
+| `Host` |yourAppName.herokuapp.com </br> Cloudflare Reverse Proxy Domain Name|
+| `Path` |/$ID-vless|
+| `id` |Generate using UUID generator or V2RayN/V2RayNG client generate</br>[uuidgenerator](https://www.uuidgenerator.net/)|
+| `Flow` |none|
+| `encryption` |none|
+| `Transport` |ws|
+| `Tls` |Tls must open, otherwise your network was insecure!|
 
 # Trojan Client Setup
 | Connection Variables | Values |
