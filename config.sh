@@ -54,10 +54,17 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 "decryption": "none"
             },
             "streamSettings": {
-                "network": "ws",
+                "network": "kcp",
                 "allowInsecure": false,
-                "wsSettings": {
-                  "path": "/$ID-trojan"
+                "kcpSettings": {
+                  "mtu": 1350,
+                  "uplinkCapacity": 13,
+                  "downlinkCapacity": 13,
+                  "congestion": true,
+                  "header": {
+                      "type": "dtls"
+                  },
+                  "seed": "$ID"
                 }
             }
         }
