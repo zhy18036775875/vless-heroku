@@ -75,9 +75,6 @@ cat << EOF > /usr/local/etc/v2ray/config.json
         "rules": [
            {
               "type": "field",
-              "protocol": [
-                 "bittorrent"
-              ],
               "domains": [
                   "geosite:cn",
                   "geosite:category-ads-all"
