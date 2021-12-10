@@ -1,19 +1,18 @@
 #!/bin/sh
 
 # Get V2/X2 binary and decompress binary
-mkdir /tmp/v2ray
-curl --retry 10 --retry-max-time 60 -L -H "Cache-Control: no-cache" -fsSL github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip -o /tmp/v2ray/v2ray.zip
-busybox unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray
-install -m 755 /tmp/v2ray/v2ray /usr/local/bin/v2ray
-install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl
-install -m 755 /tmp/v2ray/geosite.dat /usr/local/bin/geosite.dat
-install -m 755 /tmp/v2ray/geoip.dat /usr/local/bin/geoip.dat
-v2ray -version
-rm -rf /tmp/v2ray
+mkdir /tmp/xray
+curl --retry 10 --retry-max-time 60 -L -H "Cache-Control: no-cache" -fsSL github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip -o /tmp/xray/xray.zip
+busybox unzip /tmp/xray/xray.zip -d /tmp/xray
+install -m 755 /tmp/xray/xray /usr/local/bin/xray
+install -m 755 /tmp/xray/geosite.dat /usr/local/bin/geosite.dat
+install -m 755 /tmp/xray/geoip.dat /usr/local/bin/geoip.dat
+xray -version
+rm -rf /tmp/xray
 
 # V2/X2 new configuration
-install -d /usr/local/etc/v2ray
-cat << EOF > /usr/local/etc/v2ray/config.json
+install -d /usr/local/etc/xray
+cat << EOF > /usr/local/etc/xray/config.json
 {
     "log": {
         "loglevel": "none"
@@ -92,4 +91,4 @@ cat << EOF > /usr/local/etc/v2ray/config.json
 EOF
 
 # Run V2/X2
-/usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json
+/usr/local/bin/xray -config /usr/local/etc/xray/config.json
