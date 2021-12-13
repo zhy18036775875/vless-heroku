@@ -87,6 +87,7 @@ cat << EOF > /usr/local/etc/xray/config.json
                 "method": "chacha20-ietf-poly1305",
                 "password": "$ID",
                 "ivCheck": true
+            }
         }
     ],
     "routing": {
