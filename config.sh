@@ -67,7 +67,7 @@ cat << EOF > /usr/local/etc/xray/config.json
             "protocol": "dokodemo-door",
             "settings": {
                 "address": "v1.mux.cool",
-                "network": "tcp,udp",
+                "network": "tcp",
                 "followRedirect": false
             },
             "streamSettings": {
