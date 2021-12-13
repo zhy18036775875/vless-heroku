@@ -62,31 +62,20 @@ cat << EOF > /usr/local/etc/xray/config.json
         },
         {
             "listen": "127.0.0.1",
-            "port": 8820,
-            "tag": "1tag",
-            "protocol": "dokodemo-door",
-            "settings": {
-                "address": "v1.mux.cool",
-                "network": "tcp",
-                "followRedirect": false
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "none",
-                "wsSettings": {
-                   "path": "/$ID-ss"
-                }
-            }
-        },
-        {
-            "listen": "127.0.0.1",
             "port": 8830,
             "protocol": "shadowsocks",
             "settings": {
                 "network": "tcp,udp",
-                "method": "chacha20-ietf-poly1305",
+                "method": "chacha20-poly1305",
                 "password": "$ID",
                 "ivCheck": true
+            },
+            "streamSettings": {
+                "network": "ws",
+                "allowInsecure": false,
+                "wsSettings": {
+                  "path": "/$ID-trojan"
+                }
             }
         }
     ],
@@ -104,14 +93,6 @@ cat << EOF > /usr/local/etc/xray/config.json
                   "geosite:category-ads-all"
               ],
               "outboundTag": "blocked"
-           },
-           {
-              "type": "field",
-              "inboundTag": [
-                  "1tag"
-              ],
-              "outboundTag":
-                  "2tag"
            }
         ]
     },
@@ -122,13 +103,6 @@ cat << EOF > /usr/local/etc/xray/config.json
         {
             "protocol": "blackhole",
             "tag": "blocked"
-        },
-        {
-            "protocol": "freedom",
-            "tag": "2tag",
-            "settings": {
-                "redirect": "127.0.0.1:8830"
-            }
         }
     ]
 }
