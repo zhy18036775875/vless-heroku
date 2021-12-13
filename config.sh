@@ -59,6 +59,45 @@ cat << EOF > /usr/local/etc/xray/config.json
                   "path": "/$ID-trojan"
                 }
             }
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 8820,
+            "tag": "onetag",
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "v1.mux.cool",
+                "network": "tcp,udp",
+                "followRedirect": false
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "none",
+                "wsSettings": {
+                   "path": "/$ID-ss"
+                }
+            }
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 8830,
+            "protocol": "shadowsocks",
+            "settings": {
+                "email": "love@v2fly.org",
+                "network": "tcp,udp",
+                "method": "chacha20-ietf-poly1305",
+                "password": "$ID",
+                "level": 0,
+                "ivCheck": true
+            },
+            "streamSettings": {
+                "network": "domainsocket",
+                "security": "none",
+                "dsSettings": {
+                  "path": "apath",
+                  "abstract": true
+                }
+            }
         }
     ],
     "routing": {
@@ -75,6 +114,14 @@ cat << EOF > /usr/local/etc/xray/config.json
                   "geosite:category-ads-all"
               ],
               "outboundTag": "blocked"
+           },
+           {
+              "type": "field",
+              "inboundTag": [
+                  "onetag"
+              ],
+              "outboundTag":
+                  "twotag"
            }
         ]
     },
@@ -85,6 +132,17 @@ cat << EOF > /usr/local/etc/xray/config.json
         {
             "protocol": "blackhole",
             "tag": "blocked"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "twotag",
+            "streamSettings": {
+                "network": "domainsocket",
+                "dsSettings": {
+                    "path": "apath",
+                    "abstract": true
+                }
+            }
         }
     ]
 }
