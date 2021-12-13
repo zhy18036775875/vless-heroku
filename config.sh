@@ -89,14 +89,6 @@ cat << EOF > /usr/local/etc/xray/config.json
                 "password": "$ID",
                 "level": 0,
                 "ivCheck": true
-            },
-            "streamSettings": {
-                "network": "domainsocket",
-                "security": "none",
-                "dsSettings": {
-                  "path": "apath",
-                  "abstract": true
-                }
             }
         }
     ],
@@ -136,12 +128,8 @@ cat << EOF > /usr/local/etc/xray/config.json
         {
             "protocol": "freedom",
             "tag": "twotag",
-            "streamSettings": {
-                "network": "domainsocket",
-                "dsSettings": {
-                    "path": "apath",
-                    "abstract": true
-                }
+            "settings": {
+               "redirect": "127.0.0.1:8830"
             }
         }
     ]
