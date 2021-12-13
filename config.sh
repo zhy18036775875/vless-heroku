@@ -59,24 +59,6 @@ cat << EOF > /usr/local/etc/xray/config.json
                   "path": "/$ID-trojan"
                 }
             }
-        },
-        {
-            "listen": "127.0.0.1",
-            "port": 8830,
-            "protocol": "shadowsocks",
-            "settings": {
-                "network": "tcp,udp",
-                "method": "chacha20-poly1305",
-                "password": "$ID",
-                "ivCheck": true
-            },
-            "streamSettings": {
-                "network": "ws",
-                "allowInsecure": false,
-                "wsSettings": {
-                  "path": "/$ID-ss"
-                }
-            }
         }
     ],
     "routing": {
