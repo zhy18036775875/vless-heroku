@@ -66,7 +66,7 @@
 # Trojan Ws+Tls Support Status
 |Client|Support Trojan ws+tls?|
 |:----:|:--------------------:|
-|**`2dust V2RayN`**</br>**`2dust V2RayNG`**|No, Please use VLESS ws+tls|
+|**`2dust V2RayN`**</br>**`2dust V2RayNG`**|Yes, [See latest version](https://github.com/2dust/v2rayN/releases/tag/4.26)|
 |**`OpenWrt SSRPlus`**|Yes|
 |**`OpenWrt Passwall`**|Yes, Use latest passwall|
 
